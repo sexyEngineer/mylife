@@ -1,51 +1,53 @@
-ï»¿æ‰“å¼€cmdï¼Œè¾“å…¥gitï¼›
-åœ¨æ‰€éœ€è¦å­˜æ”¾ä¸œè¥¿çš„æ–‡ä»¶å¤¹ä¸‹ç‚¹å‡»shift+é¼ æ ‡å³é”®ï¼Œå‘½ä»¤æŒ‡ç¤ºï¼Œgit clone +sshåœ°å€.
+´ò¿ªcmd£¬ÊäÈëgit£»
+ÔÚËùÐèÒª´æ·Å¶«Î÷µÄÎÄ¼þ¼ÐÏÂµã»÷shift+Êó±êÓÒ¼ü£¬ÃüÁîÖ¸Ê¾£¬git clone +sshµØÖ·.
 
-å¦‚æžœæ²¡æœ‰sshå¯†é’¥æ€Žä¹ˆåŠžï¼Ÿ
-githubç‚¹å‡»è®¾ç½®--sshå’Œgpgå¯†é’¥--ç”Ÿæˆå¯†é’¥
-  ç”Ÿæˆæ–°çš„SSHå¯†é’¥
-æ‰“å¼€Git Bashã€‚
+Èç¹ûÃ»ÓÐsshÃÜÔ¿ÔõÃ´°ì£¿
+githubµã»÷ÉèÖÃ--sshºÍgpgÃÜÔ¿--Éú³ÉÃÜÔ¿
+  Éú³ÉÐÂµÄSSHÃÜÔ¿
+´ò¿ªGit Bash¡£
 
-ç²˜è´´ä»¥ä¸‹æ–‡æœ¬ï¼Œæ›¿æ¢ä¸ºæ‚¨çš„GitHubç”µå­é‚®ä»¶åœ°å€ã€‚
+Õ³ÌùÒÔÏÂÎÄ±¾£¬Ìæ»»ÎªÄúµÄGitHubµç×ÓÓÊ¼þµØÖ·¡£
 
 $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 
-å°†SSHç§é’¥æ·»åŠ åˆ°ssh-agentã€‚å¦‚æžœæ‚¨ä½¿ç”¨å…¶ä»–åç§°åˆ›å»ºå¯†é’¥ï¼Œæˆ–è€…è¦æ·»åŠ å…·æœ‰å…¶ä»–åç§°çš„çŽ°æœ‰å¯†é’¥ï¼Œè¯·ä½¿ç”¨ç§æœ‰å¯†é’¥æ–‡ä»¶çš„åç§°æ›¿æ¢å‘½ä»¤ä¸­çš„id_rsaã€‚
+½«SSHË½Ô¿Ìí¼Óµ½ssh-agent¡£Èç¹ûÄúÊ¹ÓÃÆäËûÃû³Æ´´½¨ÃÜÔ¿£¬»òÕßÒªÌí¼Ó¾ßÓÐÆäËûÃû³ÆµÄÏÖÓÐÃÜÔ¿£¬ÇëÊ¹ÓÃË½ÓÐÃÜÔ¿ÎÄ¼þµÄÃû³ÆÌæ»»ÃüÁîÖÐµÄid_rsa¡£
 
 $  ~/.ssh/id_rsa
 
-å°†SSHå¯†é’¥å¤åˆ¶åˆ°å‰ªè´´æ¿ã€‚
+½«SSHÃÜÔ¿¸´ÖÆµ½¼ôÌù°å¡£
 
-å¦‚æžœæ‚¨çš„SSHå¯†é’¥æ–‡ä»¶çš„åç§°ä¸Žç¤ºä¾‹ä»£ç çš„åç§°ä¸åŒï¼Œè¯·ä¿®æ”¹æ–‡ä»¶åä»¥åŒ¹é…å½“å‰è®¾ç½®ã€‚å¤åˆ¶å¯†é’¥æ—¶ï¼Œè¯·å‹¿æ·»åŠ ä»»ä½•æ¢è¡Œç¬¦æˆ–ç©ºæ ¼ã€‚
+Èç¹ûÄúµÄSSHÃÜÔ¿ÎÄ¼þµÄÃû³ÆÓëÊ¾Àý´úÂëµÄÃû³Æ²»Í¬£¬ÇëÐÞ¸ÄÎÄ¼þÃûÒÔÆ¥Åäµ±Ç°ÉèÖÃ¡£¸´ÖÆÃÜÔ¿Ê±£¬ÇëÎðÌí¼ÓÈÎºÎ»»ÐÐ·û»ò¿Õ¸ñ¡£
 
 $  ~/.ssh/id_rsa.pub
 
-æ·»åŠ ï¼šè®¾ç½®--sshå’Œgpgå¯†é’¥--å•å‡»â€œ æ–°å»ºSSHå¯†é’¥â€æˆ–â€œ æ·»åŠ SSHå¯†é’¥â€ã€‚åœ¨â€œæ ‡é¢˜â€å­—æ®µä¸­ï¼Œä¸ºæ–°å¯†é’¥æ·»åŠ ä¸€ä¸ªæè¿°æ€§æ ‡ç­¾ã€‚ä¾‹å¦‚ï¼Œå¦‚æžœæ‚¨ä½¿ç”¨çš„æ˜¯ä¸ªäººMacï¼Œåˆ™å¯ä»¥å°†æ­¤é”®ç§°ä¸ºâ€œä¸ªäººMacBook Airâ€ã€‚
+Ìí¼Ó£ºÉèÖÃ--sshºÍgpgÃÜÔ¿--µ¥»÷¡° ÐÂ½¨SSHÃÜÔ¿¡±»ò¡° Ìí¼ÓSSHÃÜÔ¿¡±¡£ÔÚ¡°±êÌâ¡±×Ö¶ÎÖÐ£¬ÎªÐÂÃÜÔ¿Ìí¼ÓÒ»¸öÃèÊöÐÔ±êÇ©¡£ÀýÈç£¬Èç¹ûÄúÊ¹ÓÃµÄÊÇ¸öÈËMac£¬Ôò¿ÉÒÔ½«´Ë¼ü³ÆÎª¡°¸öÈËMacBook Air¡±¡£
 
-å°†æ‚¨çš„å¯†é’¥ç²˜è´´åˆ°â€œå¯†é’¥â€å­—æ®µä¸­ã€‚
+½«ÄúµÄÃÜÔ¿Õ³Ìùµ½¡°ÃÜÔ¿¡±×Ö¶ÎÖÐ¡£
 
-æ³¨ï¼šå¯†é’¥åœ¨.sshæ–‡ä»¶ä¸­ï¼›æ–‡ä»¶åå«id_rsa.pubï¼›ç”¨è®°äº‹æœ¬æ‰“å¼€ã€‚
-
-
-å¤åˆ¶å…‹éš†åˆ°æœ¬åœ°ç£ç›˜
-git clone+sshåœ°å€ï¼Œå°±èƒ½å°†GitHubä»“åº“æ–‡ä»¶å…‹éš†åˆ°ä½ çš„æœ¬åœ°ç£ç›˜ä¸Š
-
-ï¼ˆgit logæŸ¥çœ‹æ—¥å¿—ï¼‰
+×¢£ºÃÜÔ¿ÔÚ.sshÎÄ¼þÖÐ£»ÎÄ¼þÃû½Ðid_rsa.pub£»ÓÃ¼ÇÊÂ±¾´ò¿ª¡£
 
 
-å†™çš„ä¸œè¥¿æŽ¨é€åˆ°GitHubä»“åº“ä¸­ï¼š
-æ‰¾åˆ°ç›®å½• git statusæŸ¥çœ‹å½“å‰çŠ¶æ€
-git add æ–‡ä»¶å----git commit -m "æ–‡ä»¶å commit"å°†æ–‡ä»¶ä¼ é€ç»™GitHubä»“åº“
-ä¼šæç¤ºä¸çŸ¥é“æ˜¯è°ï¼Œè¿™æ—¶å€™ä½ å°±åº”è¯¥ç™»é™†ä¸€ä¸‹ä½ çš„é‚®ç®±å’Œç”¨æˆ·å
-$ git config --global user.name GitHubçš„åå­—----$ git config --global user.email "é‚®ç®±åœ°å€"
-ç„¶åŽå†git commit -m "æ–‡ä»¶å commit"ï¼›å°†æ–‡ä»¶ä¸Šä¼ 
-git push å°†æ–‡ä»¶ä¸Šä¼ 
+¸´ÖÆ¿ËÂ¡µ½±¾µØ´ÅÅÌ
+git clone+sshµØÖ·£¬¾ÍÄÜ½«GitHub²Ö¿âÎÄ¼þ¿ËÂ¡µ½ÄãµÄ±¾µØ´ÅÅÌÉÏ
 
-git statusæ£€æŸ¥ä¸Šä¼ å†…å®¹
+£¨git log²é¿´ÈÕÖ¾£©
 
-åˆ é™¤æ–‡ä»¶ï¼š
-git commit -a -m "æ–‡ä»¶å"
+
+Ð´µÄ¶«Î÷ÍÆËÍµ½GitHub²Ö¿âÖÐ£º
+ÕÒµ½Ä¿Â¼ git status²é¿´µ±Ç°×´Ì¬
+git add ÎÄ¼þÃû----git commit -m "ÎÄ¼þÃû commit"½«ÎÄ¼þ´«ËÍ¸øGitHub²Ö¿â
+»áÌáÊ¾²»ÖªµÀÊÇË­£¬ÕâÊ±ºòÄã¾ÍÓ¦¸ÃµÇÂ½Ò»ÏÂÄãµÄÓÊÏäºÍÓÃ»§Ãû
+$ git config --global user.name GitHubµÄÃû×Ö----$ git config --global user.email "ÓÊÏäµØÖ·"
+È»ºóÔÙgit commit -m "ÎÄ¼þÃû commit"£»½«ÎÄ¼þÉÏ´«
+git push ½«ÎÄ¼þÉÏ´«
+
+git status¼ì²éÉÏ´«ÄÚÈÝ
+
+É¾³ýÎÄ¼þ£º
+git commit -a -m "ÎÄ¼þÃû"
 git push
+
+ºóÐø¼ÌÐø¸üÐÂ
 
 
 
