@@ -1,4 +1,4 @@
-# travel
+# vue-travel
 
 > A Vue.js project
 

@@ -1,53 +1,64 @@
 <template>
-  <div>
-    <div class="title">周末去哪儿</div>
-    <ul>
-      <li
-        class="item border-bottom"
-        v-for="item of list"
-        :key="item.id"
-      >
-        <div class="item-img-wrapper">
-          <img class="item-img" :src="item.imgUrl" />
+  <div class="recommend" v-if="hasWeekend">
+    <div class="recommend-title" v-if="title">{{title}}</div>
+    <div class="recommend-cont">
+      <div class="recommend-item" v-for="item in list" :key="item.id">
+        <div class="recommend-img">
+          <img :src="item.imgUrl">
         </div>
-        <div class="item-info">
-          <p class="item-title">{{item.title}}</p>
-          <p class="item-desc">{{item.desc}}</p>
+        <div class="recommend-info">
+          <div class="info-box">
+            <h1 class="info-name">{{item.name}}</h1>
+            <div class="info-item">
+              <span class="info-comment">{{item.desc}}</span>
+            </div>
+          </div>
         </div>
-      </li>
-    </ul>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'HomeWeekend',
-  props: {
-    list: Array
+  export default {
+    props: {
+      title: String,
+      list: Array
+    },
+    computed: {
+      hasWeekend() {
+        return this.list.length;
+      }
+    }
   }
-}
 </script>
 
 <style lang="stylus" scoped>
-  @import '~styles/mixins.styl'
-  .title
-    line-height: .8rem
-    background: #eee
-    text-indent: .2rem
-  .item-img-wrapper
-    overflow: hidden
-    height: 0
-    padding-bottom: 37.09%
-    .item-img
-      width: 100%
-  .item-info
-    padding: .1rem
-    .item-title
-      line-height: .54rem
-      font-size: .32rem
-      ellipsis()
-    .item-desc
-      line-height: .4rem
-      color: #ccc
-      ellipsis()
+  @import '~styles/varibles.styl'
+  .recommend
+    margin-top: .16rem
+    .recommend-title
+      padding-top .16rem
+      font-size: .36rem
+      line-height: 2
+      text-indent: .16rem
+    .recommend-cont
+      .recommend-item
+        margin: .16rem 0
+        background: #fff
+        .recommend-img
+          img
+            width: 100%
+        .recommend-info
+          padding: .16rem
+          .info-box
+            .info-item
+              display: -webkit-flex;
+              justify-content: space-between;
+              margin-top: .16rem
+            .info-name
+              font-size: .3rem
+              line-height: 1.5
+              max-height: .9rem
+              overflow: hidden
 </style>

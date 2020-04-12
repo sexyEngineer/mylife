@@ -47,6 +47,18 @@ git status检查上传内容
 git commit -a -m "文件名"
 git push
 
+团队开发：
+创建分支：git checkout "分支名"
+设置一个远端分支 git push --set-upstream orgin "分支名"
+
+另一个人：git checkout -b "用户名" 
+     git add .添加 gitcommit -m "文件名"
+     git push --set-upstream orgin "用户名"
+
+git checkout master 回到主分支
+git pull 将所有文件更新下来
+git merge "用户名"
+
 后续继续更新
 
 

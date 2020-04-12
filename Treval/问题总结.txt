@@ -4,3 +4,45 @@
       height :0
       overflow hidden
       padding-bottom:31.25%    ///这个是来自于宽高比，就是相对于宽度，变化31.25%
+
+
+
+better-scroll：城市的字母表布局，
+
+
+
+城市切换时，会出现选定城市刷新后城市恢复为默认城市，怎么解决呢？
+   利用localstorage，本地存储解决，但是有些浏览器关闭时会抛出异常，导致带啊运行不了，这时我们外层应该包裹一层try{}catch{}，利用if判定打开默认的城市是本地存储的城市
+ 例如：
+try {
+  if(localStorage.city){
+    defaultCity = localStorage.city;
+  }
+}catch (e) {
+}
+
+  changeCity(state, city) {
+    state.city = city;
+    try {
+      localStorage.city = city;
+    }catch (e) {
+
+    }
+  }
+
+
+网页性能优化：数据获取，每返回一次，页面重新发出数据请求，导致加载任务过重，利用keep-alive，将路由中的内容放到内存中，下次再进入路由时，不需要重新加载数据，直接从内存中获取就行，
+<keep-alive :exclude="exclude">
+      <router-view/>
+    </keep-alive> 
+
+用了keep-alive时，切换城市的时候，城市切换了，但是城市推荐的没有改变，如何解决这个问题？
+当使用keep-alive时，vue的生命周期中会多出一个函数activated，当页面重新被显示的时候，会触发activated，可以利用这个函数，利用if语句来判定是否重新渲染。
+if(this.lastCity == this.city) return;//判定和之前城市是不是相等
+      this.getDataInfo();//调取ajax请求
+
+
+
+
+动态路由： /组件/ :id   //后面参数，放到id的变量里面
+
